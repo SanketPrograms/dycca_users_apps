@@ -1,16 +1,19 @@
 import 'package:dycca_user_app/custom_widgets/textfield_search_widget.dart';
+import 'package:dycca_user_app/screens/home/dance_video_screen.dart';
 import 'package:dycca_user_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class DetailsOfCompetitionScreen extends StatefulWidget {
-   DetailsOfCompetitionScreen({Key? key}) : super(key: key);
+  DetailsOfCompetitionScreen({Key? key}) : super(key: key);
 
   @override
-  State<DetailsOfCompetitionScreen> createState() => _DetailsOfCompetitionScreenState();
+  State<DetailsOfCompetitionScreen> createState() =>
+      _DetailsOfCompetitionScreenState();
 }
 
-class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen> {
-  List<String> items = ['Venue Partners','Judges','Sponsors'];
+class _DetailsOfCompetitionScreenState
+    extends State<DetailsOfCompetitionScreen> {
+  List<String> items = ['Venue Partners', 'Judges', 'Sponsors'];
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
           Expanded(
             child: GestureDetector(
               onTap: () {
-                 Navigator.pushNamed(context, bookingBattleRoute);
+                Navigator.pushNamed(context, bookingBattleRoute);
               },
               child: Container(
                 decoration: BoxDecoration(
@@ -58,7 +61,10 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
           Expanded(
             child: GestureDetector(
               onTap: () {
-
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DanceVideoScreen()));
               },
               child: Container(
                 decoration: const BoxDecoration(
@@ -110,93 +116,89 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
         child: Column(
           children: [
             FittedBox(
-              fit: BoxFit.cover,
+                fit: BoxFit.cover,
                 child: Image.asset('assets/images/dance.jpeg')),
             Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child:
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Row(
-                      children: [
-                        Container(
-                            height: 80,
-                            width: 100,
-                            decoration: const BoxDecoration(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(10)),
-                              color: primaryColor,
+                padding: const EdgeInsets.only(top: 20),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 80,
+                        width: 100,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          color: primaryColor,
+                        ),
+                        // child: FittedBox(
+                        //   fit: BoxFit.cover,
+                        //     child: Image.asset('assets/images/images.jpeg')),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Dance Dilse 2021",
+                              style: appFontStyle(
+                                color: neutral6Color,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
-                          // child: FittedBox(
-                          //   fit: BoxFit.cover,
-                          //     child: Image.asset('assets/images/images.jpeg')),
-
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Competition   Dance Battle   ",
+                                    style: appFontStyle(
+                                      color: primaryColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  const Icon(
+                                    Icons.star,
+                                    color: primaryColor,
+                                    size: 15,
+                                  ),
+                                  Text(
+                                    " 4.5",
+                                    style: appFontStyle(
+                                      color: neutral6Color,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10.0),
+                              child: Row(
+                                children: [
+                                  const CircleAvatar(
+                                    radius: 8,
+                                    backgroundColor: primaryColor,
+                                  ),
+                                  Text(
+                                    "  Ramanam vsagar, 407 Others Attending",
+                                    style: fontStyle(
+                                        neutral4Color, FontWeight.w400, 12),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Dance Dilse 2021",
-                                style: appFontStyle(
-                                  color: neutral6Color,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10.0),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "Competition   Dance Battle   ",
-                                      style: appFontStyle(
-                                        color: primaryColor,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                    const Icon(Icons.star,color: primaryColor,size: 15,),
-                                    Text(
-                                      " 4.5",
-                                      style: appFontStyle(
-                                        color: neutral6Color,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10.0),
-                                child: Row(
-                                  children: [
-                                    const CircleAvatar(
-                                      radius: 8,
-                                      backgroundColor: primaryColor,
-                                    ),
-                                    Text(
-                                      "  Ramanam vsagar, 407 Others Attending",
-                                      style: fontStyle(
-                                          neutral4Color, FontWeight.w400, 12),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-
-            ),
-
-
+                      ),
+                    ],
+                  ),
+                )),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -212,7 +214,7 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 15),
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 15),
                     child: Text(
                       "We'll be hosting 10,000+ engineers, software architects, develop ecutives & professionals from 90+ countries for 3 days of technic essions from 150+ speakers, a 2-day Virtual Expo, spe…...More",
                       style: appFontStyle(
@@ -243,7 +245,11 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                   ),
                   Row(
                     children: [
-                      const Icon(Icons.online_prediction,size: 20,color: primaryColor,),
+                      const Icon(
+                        Icons.online_prediction,
+                        size: 20,
+                        color: primaryColor,
+                      ),
                       Text(
                         "    Online Event",
                         style: appFontStyle(
@@ -258,7 +264,11 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Row(
                       children: [
-                        const Icon(Icons.calendar_today,size: 18,color: primaryColor,),
+                        const Icon(
+                          Icons.calendar_today,
+                          size: 18,
+                          color: primaryColor,
+                        ),
                         Text(
                           "     Feb 17, 2021, 8:30 PM - Feb 20, 2021, 5:30 AM",
                           style: appFontStyle(
@@ -283,7 +293,11 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                   ),
                   Row(
                     children: [
-                      const Icon(Icons.online_prediction,size: 20,color: primaryColor,),
+                      const Icon(
+                        Icons.online_prediction,
+                        size: 20,
+                        color: primaryColor,
+                      ),
                       Text(
                         "    Online Event",
                         style: appFontStyle(
@@ -298,7 +312,11 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Row(
                       children: [
-                        const Icon(Icons.location_on_outlined,size: 23,color: primaryColor,),
+                        const Icon(
+                          Icons.location_on_outlined,
+                          size: 23,
+                          color: primaryColor,
+                        ),
                         Text(
                           "   Dance Vickrock Studio, ECR, Chennai",
                           style: appFontStyle(
@@ -314,7 +332,11 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Row(
                       children: [
-                        const Icon(Icons.calendar_today,size: 18,color: primaryColor,),
+                        const Icon(
+                          Icons.calendar_today,
+                          size: 18,
+                          color: primaryColor,
+                        ),
                         Text(
                           "     Feb 17, 2021, 8:30 PM - Feb 20, 2021, 5:30 AM",
                           style: appFontStyle(
@@ -339,7 +361,11 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                   ),
                   Row(
                     children: [
-                      const Icon(Icons.online_prediction,size: 20,color: primaryColor,),
+                      const Icon(
+                        Icons.online_prediction,
+                        size: 20,
+                        color: primaryColor,
+                      ),
                       Text(
                         "    Online Event",
                         style: appFontStyle(
@@ -354,7 +380,11 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Row(
                       children: [
-                        const Icon(Icons.location_on_outlined,size: 23,color: primaryColor,),
+                        const Icon(
+                          Icons.location_on_outlined,
+                          size: 23,
+                          color: primaryColor,
+                        ),
                         Text(
                           "   Dance Vickrock Studio, ECR, Chennai",
                           style: appFontStyle(
@@ -370,7 +400,11 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Row(
                       children: [
-                        const Icon(Icons.calendar_today,size: 18,color: primaryColor,),
+                        const Icon(
+                          Icons.calendar_today,
+                          size: 18,
+                          color: primaryColor,
+                        ),
                         Text(
                           "     Feb 17, 2021, 8:30 PM - Feb 20, 2021, 5:30 AM",
                           style: appFontStyle(
@@ -382,7 +416,9 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   ListView.builder(
                     itemCount: items.length,
                     physics: const ScrollPhysics(),
@@ -396,16 +432,18 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                             padding: const EdgeInsets.only(bottom: 8.0),
                             child: Text(
                               items[index],
-                              style: fontStyle(
-                                  neutral6Color, FontWeight.w400, 16),
+                              style:
+                                  fontStyle(neutral6Color, FontWeight.w400, 16),
                             ),
                           ),
-
                           createEvent(),
-                          const SizedBox(height: 20,),
+                          const SizedBox(
+                            height: 20,
+                          ),
                         ],
                       );
-                    },),
+                    },
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: Text(
@@ -482,18 +520,19 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             ),
-
           ],
         ),
       ),
     );
   }
-  Widget createEvent(){
+
+  Widget createEvent() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Container(
@@ -506,12 +545,10 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
             return Padding(
               padding: const EdgeInsets.all(5.0),
               child: Container(
-
                 width: 140,
                 decoration: BoxDecoration(
-                    border: Border.all(color: neutral4Color,width: 1),
-                    borderRadius: const BorderRadius.all(Radius.circular(4))
-                ),
+                    border: Border.all(color: neutral4Color, width: 1),
+                    borderRadius: const BorderRadius.all(Radius.circular(4))),
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Column(
@@ -519,14 +556,16 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                       Padding(
                         padding: const EdgeInsets.only(left: 120.0),
                         child: GestureDetector(
-                            onTap: (){},
-                            child: const Icon(Icons.cancel_rounded,size: 13,)),
+                            onTap: () {},
+                            child: const Icon(
+                              Icons.cancel_rounded,
+                              size: 13,
+                            )),
                       ),
                       const CircleAvatar(
                         radius: 22,
                         backgroundColor: Colors.blue,
                       ),
-
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
@@ -535,7 +574,8 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 5.0,left: 20,right: 20,top: 3),
+                        padding: const EdgeInsets.only(
+                            bottom: 5.0, left: 20, right: 20, top: 3),
                         child: Text(
                           "Choreographer",
                           style: fontStyle(primaryColor, FontWeight.w400, 8),
@@ -547,41 +587,54 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                             children: [
                               Row(
                                 children: [
-                                  const Icon(Icons.star,color: primaryColor,size: 15,),
+                                  const Icon(
+                                    Icons.star,
+                                    color: primaryColor,
+                                    size: 15,
+                                  ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 8.0),
                                     child: Text(
                                       "4.5",
-                                      style: fontStyle(primaryColor, FontWeight.w400, 8),
+                                      style: fontStyle(
+                                          primaryColor, FontWeight.w400, 8),
                                     ),
                                   ),
                                 ],
                               ),
                               Text(
                                 "Rating",
-                                style: fontStyle(neutral6Color, FontWeight.w400, 10),
+                                style: fontStyle(
+                                    neutral6Color, FontWeight.w400, 10),
                               ),
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 6.0),
                             child: Column(
                               children: [
                                 Row(
                                   children: [
-                                    const Icon(Icons.person,color: primaryColor,size: 15,),
+                                    const Icon(
+                                      Icons.person,
+                                      color: primaryColor,
+                                      size: 15,
+                                    ),
                                     Padding(
                                       padding: const EdgeInsets.only(top: 8.0),
                                       child: Text(
                                         "89",
-                                        style: fontStyle(primaryColor, FontWeight.w400, 8),
+                                        style: fontStyle(
+                                            primaryColor, FontWeight.w400, 8),
                                       ),
                                     ),
                                   ],
                                 ),
                                 Text(
                                   "Collaborated",
-                                  style: fontStyle(neutral6Color, FontWeight.w400, 10),
+                                  style: fontStyle(
+                                      neutral6Color, FontWeight.w400, 10),
                                 ),
                               ],
                             ),
@@ -590,19 +643,25 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                             children: [
                               Row(
                                 children: [
-                                  const Icon(Icons.person,color: primaryColor,size: 15,),
+                                  const Icon(
+                                    Icons.person,
+                                    color: primaryColor,
+                                    size: 15,
+                                  ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 8.0),
                                     child: Text(
                                       "23",
-                                      style: fontStyle(primaryColor, FontWeight.w400, 8),
+                                      style: fontStyle(
+                                          primaryColor, FontWeight.w400, 8),
                                     ),
                                   ),
                                 ],
                               ),
                               Text(
                                 "Created",
-                                style: fontStyle(neutral6Color, FontWeight.w400, 10),
+                                style: fontStyle(
+                                    neutral6Color, FontWeight.w400, 10),
                               ),
                             ],
                           ),
@@ -613,7 +672,8 @@ class _DetailsOfCompetitionScreenState extends State<DetailsOfCompetitionScreen>
                 ),
               ),
             );
-          },),
+          },
+        ),
       ),
     );
   }
